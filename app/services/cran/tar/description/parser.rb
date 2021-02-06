@@ -25,7 +25,7 @@ module Cran
               results[field] = value if field
 
               field = line.split(': ').first
-              value = line.split(': ').last.squish.gsub("\n", '')
+              value = line.split(': ')[1..].join.squish.gsub("\n", '')
             end
           end
 
