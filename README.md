@@ -1,24 +1,35 @@
-# README
+# Welcome to SonarHome test app
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Technical Stack
 
-Things you may want to cover:
+- Ruby 3 (https://www.ruby-lang.org/en/)
+- Rails 6 (https://rubyonrails.org/)
+- Docker (https://www.docker.com/)
+- docker-compose (https://docs.docker.com/compose/)
+- Postgres (https://www.postgresql.org/)
+- Redis (https://redis.io/)
+- git (https://git-scm.com/)
 
-* Ruby version
+## Setup
 
-* System dependencies
+### Required software
 
-* Configuration
+- ruby
+- git
+- docker
+- docker-compose
 
-* Database creation
+## Importing the packages with raketask
 
-* Database initialization
+    bundle
+    docker-compose up -d
+    bundle exec rake db:setup
+    bundle exec sidekiq
+    bundle exec rake packages:refresh
 
-* How to run the test suite
+## Running the tests
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+    bundle
+    docker-compose up -d
+    RAILS_ENV=test rake db:setup
+    bundle exec rspec
