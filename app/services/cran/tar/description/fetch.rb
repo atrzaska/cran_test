@@ -17,21 +17,21 @@ module Cran
 
         def call
           Rails.cache.fetch(cache_key, expires_in: CACHE_TTL) do
-            encoded_description
+            encoded_description(description)
           end
         end
 
         private
 
-        def encoded_description
-          extract_description.encode('utf-8')
+        def encoded_description(description)
+          description.encode('utf-8')
         rescue Encoding::InvalidByteSequenceError
-          extract_description.force_encoding('windows-1250').encode('utf-8')
+          description.force_encoding('windows-1250').encode('utf-8')
         rescue Encoding::UndefinedConversionError
-          extract_description
+          description
         end
 
-        def extract_description
+        def description
           file = URI.open(url)
 
           unzipped = Zlib::GzipReader.new(file)
