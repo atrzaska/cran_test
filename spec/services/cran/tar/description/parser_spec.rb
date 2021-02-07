@@ -38,9 +38,9 @@ RSpec.describe Cran::Tar::Description::Parser do
       let(:expected) do
         'Functions and Data set presented in Applied Linear Statistical Models Fifth '\
         'Edition (Chapters 1-9 and 16-25), Michael H. Kutner; Christopher J. Nachtsheim; '\
-        'John Neter; William Li, 2005. (ISBN-100071122214, ISBN-13978-0071122214) that do '\
-        'not exist in R, are gathered in this package. The whole book will be covered in '\
-        'the next versions.'
+        'John Neter; William Li, 2005. (ISBN-10: 0071122214, ISBN-13: 978-0071122214) '\
+        'that do not exist in R, are gathered in this package. The whole book will be '\
+        'covered in the next versions.'
       end
 
       it 'is parsed correctly' do
