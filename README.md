@@ -1,4 +1,4 @@
-# Welcome to SonarHome test app
+# Welcome to Cran test app
 
 ## Technical Stack
 
